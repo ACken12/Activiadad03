@@ -12,7 +12,7 @@ class DbService {
 
     // If email doesn't exist, proceed with insert
     const insertQuery = 'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *';
-    const result = await bdPostgresql.query(insertQuery, [user.name, user.email, user.password]);
+    const result = await bdPostgresql.query(insertQuery, [user.email, user.password]);
     return result.rows[0];
   }
   async findUser(email, password){
