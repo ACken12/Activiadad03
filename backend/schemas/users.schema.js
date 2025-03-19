@@ -8,10 +8,7 @@ const password = Joi.string()
   .message("La contraseña debe tener al menos 8 caracteres, una mayúscula y un número")
   .required();
 
-const name = Joi.string().min(3).max(50).required();
-
 const createUserSchema = Joi.object({
-  name,
   email,
   password,
 });
