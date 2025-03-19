@@ -17,8 +17,8 @@ class DbService {
       const hashedPassword = await bcrypt.hash(user.password, saltRounds);
 
       // If email doesn't exist, proceed with insert using the hashed password
-      const insertQuery = 'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *';
-      const result = await bdPostgresql.query(insertQuery, [user.name, user.email, hashedPassword]);
+      const insertQuery = 'INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *';
+      const result = await bdPostgresql.query(insertQuery, [user.email, hashedPassword]);
       return result.rows[0];
     } catch (error) {
       throw new Error(error.message);
