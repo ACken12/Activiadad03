@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require("cors");
 const bdPostgresql = require('./bd.js');
-const routerApi = require('./routes');
+const routes = require('./routes/routes.js');
 const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler');
 
 
@@ -19,6 +19,7 @@ routerApi(app);
 app.use(logErrors);
 app.use(errorHandler);
 app.use(boomErrorHandler);
+app.use('', routes);
 
 app.listen(port, () => {
   console.log("Servidor corriendo en http://" + IP + ":" + port + "/");
