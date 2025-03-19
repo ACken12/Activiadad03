@@ -6,11 +6,11 @@ const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/err
 
 
 const app = express();
+const port = 3000;
+
 app.use(cors());
 app.use(express.json());
 
-const port = 3000;
-const IP = "192.168.1.123";
 
 
 app.use(logErrors);
@@ -18,8 +18,8 @@ app.use(errorHandler);
 app.use(boomErrorHandler);
 app.use('', routes);
 
-app.listen(port, () => {
-  console.log("Servidor corriendo en http://" + IP + ":" + port + "/");
-})
+app.listen(port, 'localhost', () => {
+  console.log('Servidor corriendo en http://localhost:'+ port);
+});
 
 
