@@ -1,4 +1,5 @@
 const express = require('express');
+const bdPostgresql = require('./bd.js');
 const routerApi = require('./routes');
 const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler');
 const app = express();
@@ -12,6 +13,7 @@ routerApi(app);
 app.use(logErrors);
 app.use(errorHandler);
 app.use(boomErrorHandler);
+
 app.listen(port, () => {
   console.log("http://" + IP + ":" + port + "/");
 })
