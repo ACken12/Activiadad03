@@ -14,7 +14,7 @@ const port = 3000;
 const IP = "192.168.1.123";
 
 
-routerApi(app);
+routes(app);
 
 app.use(logErrors);
 app.use(errorHandler);
