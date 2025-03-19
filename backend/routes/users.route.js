@@ -1,4 +1,5 @@
 const  DbService = require('../databases/dbusers.js');
+const AuthService = require('../services/authServices.js');
 const dbService = new DbService();
 
 module.exports = {
