@@ -10,7 +10,7 @@ module.exports = {
    * @param {*} res
    * */
 
-    get: async (req, res) => {
+    postLogin: async (req, res) => {
 
       let { password , email } = req.body;
       try {
