@@ -1,4 +1,4 @@
-const URLUSER = "http://localhost:3001/api";
+const URLUSER = "http://localhost:3000/";
 
 
 const register = (data) => {
