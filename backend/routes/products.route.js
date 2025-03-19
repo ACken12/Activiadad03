@@ -1,3 +1,5 @@
+/*
+
 const express = require('express');
 
 const ProductsService = require('./../services/product.service');
@@ -60,3 +62,6 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+
+*/
