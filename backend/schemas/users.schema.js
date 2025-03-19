@@ -1,9 +1,19 @@
-const Joi = require('joi');
+const Joi = require("joi");
 
-const email = Joi.string().email().min(5).max(30);
-const password = Joi.number().integer().min(10);
+const email = Joi.string().email().min(5).max(50).required();
+const password = Joi.string()
+  .min(8)
+  .max(30)
+  .pattern(/^(?=.*[A-Z])(?=.*\d).{8,}$/)
+  .message("La contraseña debe tener al menos 8 caracteres, una mayúscula y un número")
+  .required();
+
+const name = Joi.string().min(3).max(50).required();
 
 const createUserSchema = Joi.object({
-  password: password.required(),
-  email: email.required(),
+  name,
+  email,
+  password,
 });
+
+module.exports = { createUserSchema };
