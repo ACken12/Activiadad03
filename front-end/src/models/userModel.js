@@ -1,10 +1,10 @@
-const URLUSER = "http://localhost:3000/";
+const URLUSER = "http://localhost:3000";
 
 
 const register = (data) => {
     return new Promise((resolve, reject) => {
         
-        const url = URLUSER + '/users';
+        const url = URLUSER + '/User/register';
 
         axios({
             method: "POST",
@@ -27,7 +27,7 @@ const register = (data) => {
 const login = (data) => {
     return new Promise((resolve, reject) => {
         
-        const url = URLUSER + "/session"
+        const url = URLUSER + "/User/login"
 
         axios({
             method: "POST",
