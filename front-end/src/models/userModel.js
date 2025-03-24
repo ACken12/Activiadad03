@@ -38,7 +38,8 @@ const login = (data) => {
             }
         })
             .then(response => {
-                sessionStorage.setItem('token', response.data);
+                const token = response.data.token;
+                sessionStorage.setItem('token', token);
                 resolve(true);
             })
             .catch(error => {
