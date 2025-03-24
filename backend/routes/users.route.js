@@ -10,18 +10,21 @@ module.exports = {
    * @param {*} res
    * */
 
-    postLogin: async (req, res) => {
-
-      let { password , email } = req.body;
-      try {
-          const data = await dbService.findUser(email,password);
-          res.status(200).json(data);
-      } catch (error) {
-          res.status(500).json({ message: error.message })
-      }
-
-    },
-    post: async (req, res) => {
+  postLogin: async (req, res) => {
+    let { password, email } = req.body;
+    try {
+        const user = await dbService.findUser(email, password);
+        if (!user) {
+          return res.status(401).json({ message: "Credenciales inválidas" });
+        }
+        // Generar token usando AuthService
+        const token = AuthService.generateToken(user);
+        res.status(200).json({ user, token });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+  },
+  post: async (req, res) => {
       try {
         const { name, email, password } = req.body;
         const newUser = await dbService.saveUser({ name, email, password });
