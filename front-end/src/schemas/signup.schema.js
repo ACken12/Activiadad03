@@ -40,4 +40,3 @@ const signupValidation = {
     }
 };
 
-export default signupValidation;
