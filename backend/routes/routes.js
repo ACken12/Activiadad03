@@ -12,7 +12,7 @@ router.post("/User/register",
   usersRouter.post
 );
 
-router.post("/User/login", loginLimiter, usersRouter.postLogin);
+router.post("/User/login", loginLimiter, validatorHandler(createUserSchema, 'body'), usersRouter.postLogin);
 
 router.get("/User/validate-token", authenticate, (req, res) => {
   res.json({ message: "Token is valid", user: req.user });
