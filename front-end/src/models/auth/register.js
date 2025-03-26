@@ -1,5 +1,3 @@
-import signupValidation from '../../schemas/signup.schema.js';
-
 document.getElementById("signup-form").addEventListener("submit", async (event) => {
     event.preventDefault();
 
