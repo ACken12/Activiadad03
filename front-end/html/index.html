@@ -6,10 +6,22 @@
     <title>Home</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../src/page/access.js"></script>
+    <link rel="stylesheet" href="../css/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Home page</h1>
+    <div class="welcome-container">
+        <button onclick="logout()" class="btn btn-primary logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+        
+        <div class="content-box text-center">
+            <h1 class="display-4 mb-4">Bienvenido </h1>
+            <h2 class="text-muted mb-4">Espero que estes bien!</h2>
+        </div>
+    </div>
 
-    <h2>Bienvenido!!!!</h2>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
 </body>
 </html>
