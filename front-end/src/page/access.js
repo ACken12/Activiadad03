@@ -1,7 +1,7 @@
 const token = localStorage.getItem("token");
 
 if (!token) {
-    window.location.href = "../../front-end/html/login.html";
+    window.location.href = "../../front-end/html/login.html?error=token";
 } else {
     // Validar token con Axios
     (async () => {
@@ -16,7 +16,7 @@ if (!token) {
 
         } catch (error) {
             console.error('Error de autenticación:', error.response?.data || error.message);
-            window.location.href = "../../front-end/html/login.html";
+            window.location.href = "../../front-end/html/login.html?error=token";
         }
     })();
 }

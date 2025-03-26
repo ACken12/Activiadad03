@@ -72,6 +72,6 @@ document.getElementById("signup-form").addEventListener("submit", async (event) 
         window.location.href = "../../front-end/html/login.html";
 
     } catch (error) {
-        console.error("Error en el registro:", error);
+        console.error("Error en el login:", error);
     }
 });
