@@ -26,7 +26,7 @@ class DbService {
   }
 
   async findUser(email, password) {
-    const query = 'SELECT * FROM users WHERE email = $1';
+    const query = 'SELECT email, password FROM users WHERE email = $1';
     const result = await bdPostgresql.query(query, [email]);
     const user = result.rows[0];
 

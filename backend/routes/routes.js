@@ -3,15 +3,16 @@ const authenticate = require('../middlewares/auth.middleware');
 const router = express.Router();
 const usersRouter = require('./users.route');
 const validatorHandler = require('../middlewares/validator.handler');
+const { loginLimiter, registerLimiter } = require("../middlewares/rateLimit");
 const { createUserSchema } = require('../schemas/users.schema');
 
 
 router.post("/User/register",
-  validatorHandler(createUserSchema, 'body'),  // Validate request body
+  registerLimiter, validatorHandler(createUserSchema, 'body'),  // Validate request body
   usersRouter.post
 );
 
-router.post("/User/login", usersRouter.postLogin);
+router.post("/User/login", loginLimiter, usersRouter.postLogin);
 
 router.get("/User/validate-token", authenticate, (req, res) => {
   res.json({ message: "Token is valid", user: req.user });
