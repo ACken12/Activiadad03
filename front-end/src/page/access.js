@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const token = sessionStorage.getItem("token");
-
+    console.log('Token:', token);
+    /*
     if (!token) {
         redirigirAlLogin();
         return;
     }
-
+    */
     // Validar token con Axios
     try {
         const response = await axios.get('http://localhost:3000/User/validate-token', {
@@ -25,4 +26,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 function redirigirAlLogin() {
     alert("Acceso denegado. Debe iniciar sesión.");
     window.location.href = "http://localhost:5500/login";
+}
+
+function logout() {
+    localStorage.removeItem('token');
+    window.location.href = 'login.html';
 }
