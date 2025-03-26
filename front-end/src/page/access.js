@@ -25,10 +25,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function redirigirAlLogin() {
     alert("Acceso denegado. Debe iniciar sesión.");
-    window.location.href = "http://localhost:5500/login";
+    window.location.href = "../../front-end/html/login.html";
 }
 
 function logout() {
     localStorage.removeItem('token');
-    window.location.href = 'login.html';
+    window.location.href = '../../front-end/html/login.html';
+
 }
