@@ -26,52 +26,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control bg-black text-light" id="name" placeholder="Ingrese su nombre" required>
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="r-email" class="form-label">Correo</label>
-                                        <input type="email" class="form-control bg-black text-light" id="r-email" placeholder="Ingrese un correo"
+                                        <input type="email"  class="form-control bg-black text-light" id="email" placeholder="Ingrese un correo"
                                             required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="r-password" class="form-label">Contraseña</label>
-                                        <input type="password" class="form-control bg-black text-light" id="r-password" placeholder="Ingrese una contraseña"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="last-name" class="form-label">Apellido</label>
-                                        <input type="text" class="form-control bg-black text-light" id="last-name" placeholder="Ingrese su apellido"
-                                            required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="pin" class="form-label">Pin (6 digitos)</label>
-                                        <input type="number" class="form-control bg-black text-light" id="pin" required placeholder="Ingrese un pin"
-                                            minlength="6">
-                                        <div id="pinError" class="text-danger" style="display: none;"> El PIN debe
-                                            contener solo números y ser minimo 6 digitos. </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="confirm-password" class="form-label">Confirmar Contraseña</label>
-                                        <input type="password" class="form-control bg-black text-light"
-                                            id="confirm-password" placeholder="Confirme su contraseña" required>
-                                        <div id="passwordError" class="text-danger" style="display: none;"> Las
-                                            contraseñas no coinciden. </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="country" class="form-label">País</label>
-                                        <select class="form-select bg-black text-light" id="country">
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="date-birth" class="form-label">Fecha de Nacimiento</label>
-                                        <input type="date" class="form-control bg-black text-light" id="date-birth"
+                                        <input type="password" class="form-control bg-black text-light" id="password" placeholder="Ingrese una contraseña"
                                             required>
                                     </div>
                                 </div>
@@ -79,9 +40,6 @@
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-info form-control"
                                     id="btn-register">Registrarme</button>
-                            </div>
-                            <div class="login_register mt-3 text-center">
-                                <p>¿Ya tiene una cuenta? <a href="http://127.0.0.1:5500/html/auth/login.html" class="login-link text-info text-decoration-none">Iniciar Sesión</a></p>
                             </div>
                             <input type="hidden" value="signup" id="context">
                         </form>
@@ -102,9 +60,10 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script src="../src//schemas/signup.schema.js"></script>
     <script src="../src/models/userModel.js"></script>
     <!-- <script src="../../src/auth/error.js"></script> -->
-    <!-- <script src="../../src/auth/signup.js"></script> -->
+    <script src="../src/models/auth/register.js"></script>
 </body>
 
 </html>

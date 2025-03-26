@@ -8,11 +8,15 @@ const { createUserSchema } = require('../schemas/users.schema');
 
 
 router.post("/User/register",
-  registerLimiter, validatorHandler(createUserSchema, 'body'),  // Validate request body
+  registerLimiter, 
+  validatorHandler(createUserSchema, 'body'),  // Validate request body
   usersRouter.post
 );
 
-router.post("/User/login", loginLimiter, validatorHandler(createUserSchema, 'body'), usersRouter.postLogin);
+router.post("/User/login", loginLimiter, 
+  validatorHandler(createUserSchema, 'body'), 
+  usersRouter.postLogin
+);
 
 router.get("/User/validate-token", authenticate, (req, res) => {
   res.json({ message: "Token is valid", user: req.user });
