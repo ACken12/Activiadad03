@@ -26,5 +26,21 @@ document.getElementById("signup-form").addEventListener("submit", async (event) 
         }
     } catch (error) {
         console.error("Error en el login:", error);
+        if(error.status === 400){
+            Swal.fire({
+                icon: "error",
+                title: "Correo ya registrado",
+                text: "Este correo ya está asociado a una cuenta. Intenta iniciar sesión.",
+                confirmButtonText: "Aceptar"
+            });
+        }
+        else if(error.status === 429){
+            Swal.fire({
+                icon: "warning",
+                title: "Demasiados intentos",
+                text: "Demasiados intentos fallidos. Intente más tarde.",
+                confirmButtonText: "Aceptar"
+            });
+        }
     }
 });
