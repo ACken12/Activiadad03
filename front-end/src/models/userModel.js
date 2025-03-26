@@ -15,7 +15,7 @@ const register = (data) => {
             }
         })
             .then(response => {
-                sessionStorage.setItem('token', response.data);
+                localStorage.setItem('token', response.data.token);
                 resolve(true);
             })
             .catch(error => {
@@ -39,7 +39,7 @@ const login = (data) => {
         })
             .then(response => {
                 const token = response.data.token;
-                sessionStorage.setItem('token', token);
+                localStorage.setItem('token', token);
                 resolve(true);
             })
             .catch(error => {
