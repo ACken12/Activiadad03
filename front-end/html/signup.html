@@ -26,22 +26,23 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="r-email" class="form-label">Correo</label>
-                                        <input type="email"  class="form-control bg-black text-light" id="email" placeholder="Ingrese un correo"
+                                        <label for="email" class="form-label">Correo</label>
+                                        <input type="email" class="form-control bg-black text-light" id="email" placeholder="Ingrese un correo"
                                             required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="r-password" class="form-label">Contraseña</label>
+                                        <label for="password" class="form-label">Contraseña</label>
                                         <input type="password" class="form-control bg-black text-light" id="password" placeholder="Ingrese una contraseña"
                                             required>
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-3">
+
                                 <button type="submit" class="btn btn-info form-control"
                                     id="btn-register">Registrarme</button>
                             </div>
-                            <input type="hidden" value="signup" id="context">
+
                         </form>
                     </div>
                 </div>
@@ -60,10 +61,8 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script src="../src//schemas/signup.schema.js"></script>
-    <script src="../src/models/userModel.js"></script>
-    <!-- <script src="../../src/auth/error.js"></script> -->
     <script src="../src/models/auth/register.js"></script>
+    <script src="../src/models/userModel.js"></script>
 </body>
 
 </html>
